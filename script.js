@@ -49,6 +49,5 @@ function reloj(){
     }, 1000)
 
 }
-
-
+//funcion reloj
 reloj()
