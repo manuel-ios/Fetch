@@ -1,10 +1,7 @@
 let input =  document.querySelector('input')
 let button = document.querySelector('button')
 
-input.addEventListener('mouseenter',()=>{
-    
 
-})
 
 button.addEventListener('click',(e)=>{
    e.preventDefault()
@@ -30,3 +27,28 @@ function crearPokemon(pokemon){
     document.body.append(div)
     console.log(pokemon)
 }
+
+
+
+let div_Reloj = document.createElement('div') 
+
+function reloj(){
+    let hrActual =  new Date()
+    let hr =  hrActual.getHours()
+    let min =  hrActual.getMinutes()
+    let seg =  hrActual.getSeconds()
+    hr =  hr < 9 ? "0"+ hr: hr
+    min = min < 9 ? "0" + min : min 
+    seg = seg < 9 ? "0" + seg :  seg 
+    let time  =  hr + ":" + min+":"+seg 
+    div_Reloj.textContent = time
+    document.body.append(div_Reloj)
+    console.log(time)   
+    setTimeout(function(){
+        reloj()
+    }, 1000)
+
+}
+
+
+reloj()
